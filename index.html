@@ -1,0 +1,272 @@
+<!doctype html>
+<html>
+    <meta charset="utf-8">
+<title>Playing with jQuery Steps - FormValidation</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="/bundles/ifram.js"></script>
+    
+</head>
+<body class="demo-bootstrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12" id="demoContainer" style="height: auto">
+                <!-- Include jQuery Steps file -->
+<link rel="stylesheet" href="css/jquery.steps.css">
+<link rel="stylesheet" href="css/custom.css">
+<script src="js/jquery.steps.js"></script>
+<script src="js/profileFormValidation.js"></script>
+
+
+<style type="text/css">
+/* Adjust the height of section */
+#profileForm .content {
+    min-height: 100px;
+}
+#profileForm .content > .body {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    position: relative;
+}
+</style>
+<div class="page-header">
+                    <h1>Employee Information</h1>
+                </div>
+<form id="profileForm" method="post" class="form-horizontal">
+     <h2>Personal Information</h2>
+    <section data-step="0">
+        <div class="form-group">
+            <label class="col-xs-3 control-label">Full name</label>
+
+            <div class="col-xs-3">
+                <input type="text" class="form-control" name="firstName" placeholder="First name" />
+            </div>
+             <div class="col-xs-3">
+                <input type="text" class="form-control" name="middleName" placeholder="Middle name" />
+            </div>
+
+            <div class="col-xs-3">
+                <input type="text" class="form-control" name="lastName" placeholder="Last name" />
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label class="col-xs-3 control-label">Gender</label>
+            <div class="col-xs-6">
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="gender" value="male" /> Male &nbsp;
+                    </label>
+                     <label>
+                        <input type="radio" name="gender" value="female" /> Female &nbsp;
+                    </label>
+                     <label>
+                        <input type="radio" name="gender" value="other" /> other &nbsp;
+                    </label>
+                </div>
+               </div>
+            </div>
+        <div class="form-group">
+          <label class="col-xs-3 control-label" for="inputAddress">Address</label>
+          <div class="col-xs-6">
+          <input type="text" class="form-control" name="streetAddress" id="streetAddress" placeholder="1234 Main St"/>
+          </div>
+         </div>
+         <div class="form-group">
+             <label class="col-xs-3 control-label" for="inputAddress"></label>
+          <div class="col-xs-3">
+          <input type="text" class="form-control" name="cityName" id="cityName" placeholder="Monroe"/>
+          </div>
+           <div class="col-xs-3">
+           <select id="inputState" name="stateName" class="form-control">
+            <option value="">-- Select a State --</option>
+           <option value="AL">Alabama</option>
+							<option value="AK">Alaska</option>
+							<option value="AZ">Arizona</option>
+							<option value="AR">Arkansas</option>
+							<option value="CA">California</option>
+							<option value="CO">Colorado</option>
+							<option value="CT">Connecticut</option>
+							<option value="DE">Delaware</option>
+							<option value="DC">District Of Columbia</option>
+							<option value="FL">Florida</option>
+							<option value="GA">Georgia</option>
+							<option value="HI">Hawaii</option>
+							<option value="ID">Idaho</option>
+							<option value="IL">Illinois</option>
+							<option value="IN">Indiana</option>
+							<option value="IA">Iowa</option>
+							<option value="KS">Kansas</option>
+							<option value="KY">Kentucky</option>
+							<option value="LA">Louisiana</option>
+							<option value="ME">Maine</option>
+							<option value="MD">Maryland</option>
+							<option value="MA">Massachusetts</option>
+							<option value="MI">Michigan</option>
+							<option value="MN">Minnesota</option>
+							<option value="MS">Mississippi</option>
+							<option value="MO">Missouri</option>
+							<option value="MT">Montana</option>
+							<option value="NE">Nebraska</option>
+							<option value="NV">Nevada</option>
+							<option value="NH">New Hampshire</option>
+							<option value="NJ">New Jersey</option>
+							<option value="NM">New Mexico</option>
+							<option value="NY">New York</option>
+							<option value="NC">North Carolina</option>
+							<option value="ND">North Dakota</option>
+							<option value="OH">Ohio</option>
+							<option value="OK">Oklahoma</option>
+							<option value="OR">Oregon</option>
+							<option value="PA">Pennsylvania</option>
+							<option value="RI">Rhode Island</option>
+							<option value="SC">South Carolina</option>
+							<option value="SD">South Dakota</option>
+							<option value="TN">Tennessee</option>
+							<option value="TX">Texas</option>
+							<option value="UT">Utah</option>
+							<option value="VT">Vermont</option>
+							<option value="VA">Virginia</option>
+							<option value="WA">Washington</option>
+							<option value="WV">West Virginia</option>
+							<option value="WI">Wisconsin</option>
+							<option value="WY">Wyoming</option>
+      </select>
+    </div>
+     <div class="col-xs-3">
+          <input type="text" class="form-control" name="zipCode" id="zipCode" placeholder="71203"/>
+          </div>
+         </div>
+
+        <div class="form-group">
+            <label class="col-xs-3 control-label">Birthday</label>
+            <div class="col-xs-3">
+               <input type="date" class="form-control" name="dob" placeholder="mm/dd/yyyy">
+            </div>
+            <label class="col-xs-3 control-label">Marital Status</label>
+            <div class="col-xs-3">
+             <select id="inputState" name="maritalStatus" class="form-control">
+            <option value="">-- Select a Status --</option>
+              <option value="Single">Single</option>
+           <option value="Married">Married</option>
+		   <option value="Divorced">Divorced</option>
+		   </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-xs-3 control-label">SSN</label>
+            <div class="col-xs-3">
+               <input type="text" class="form-control" pattern="" name="ssn" placeholder="000-00-0000">
+            </div>
+            <label class="col-xs-3 control-label">US Phoen No</label>
+            <div class="col-xs-3">
+                 <input type="text" class="form-control" name="phoneNumberUS" placeholder="US Phone number"/>
+            </div>
+        </div>
+    </section>
+    <h2>Job Information</h2>
+    <section data-step="1">
+         <div class="form-group">
+          <label class="col-xs-3 control-label">Job Title</label>
+          <div class="col-xs-6">
+          <input type="text" class="form-control" name="jobTitle" placeholder="Software Developer"/>
+          </div>
+         </div>
+          <div class="form-group">
+          <label class="col-xs-3 control-label">Employee ID</label>
+          <div class="col-xs-6">
+          <input type="text" class="form-control" name="employeeId" placeholder="Employee Id"/>
+          </div>
+         </div>
+         <div class="form-group">
+            <label class="col-xs-3 control-label">Start Date</label>
+            <div class="col-xs-3">
+               <input type="date" class="form-control" name="startDate" placeholder="MM/DD/YYYY">
+            </div>
+            </div>
+         <div class="form-group">
+          <label class="col-xs-3 control-label">Salary Rate</label>
+          <div class="col-xs-6">
+          <input type="text" class="form-control" name="salaryRate" placeholder="Salary Rate"/>
+          </div>
+         </div>
+        
+    </section>
+    
+     <h2>Account</h2>
+    <section data-step="2">
+        <div class="form-group">
+            <label class="col-xs-3 control-label">Username</label>
+            <div class="col-xs-6">
+                <input type="text" class="form-control" name="username" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-xs-3 control-label">Email</label>
+            <div class="col-xs-6">
+                <input type="text" class="form-control" name="email" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-xs-3 control-label">Password</label>
+            <div class="col-xs-6">
+                <input type="password" class="form-control" name="password" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-xs-3 control-label">Retype password</label>
+            <div class="col-xs-6">
+                <input type="password" class="form-control" name="confirmPassword" />
+            </div>
+        </div>
+        <div class="form-group">
+        <label class="col-xs-3 control-label" id="captchaOperation"></label>
+        <div class="col-xs-6">
+            <input type="text" class="form-control" name="captcha" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-xs-6 col-xs-offset-3">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="agree" value="agree" /> Agree with the terms and conditions
+                </label>
+            </div>
+        </div>
+    </div>
+    </section>
+    
+    
+    
+   
+     
+</form>
+
+<div class="modal fade" id="welcomeModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Welcome</h4>
+            </div>
+            <div class="modal-body">
+                <p class="text-center">Thanks for signing up</p>
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

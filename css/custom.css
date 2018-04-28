@@ -1,0 +1,25 @@
+
+.number{
+    border:2px solid red;
+    padding:1px;
+}
+#profileForm-t-0,#profileForm-t-1,#profileForm-t-2{
+    width:95%;
+    font-size: 16px;
+}
+
+
+.error a .number{
+    border:2px solid blue;
+    padding:1px;
+    
+}
+
+.error a {
+    color:blue;
+}
+
+.wizard > .steps .error a, .wizard > .steps .error a:hover, .wizard > .steps .error a:active {
+   	background-image: url(../images/redImage.png);
+    color: White;
+}
