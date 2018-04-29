@@ -64,11 +64,46 @@ $(document).ready(function() {
                 return true;
             },
             onFinished: function(e, currentIndex) {
-                // Uncomment the following line to submit the form using the defaultSubmit() method
-                 $('#profileForm').formValidation('defaultSubmit');
+                 var url = "employee.php"; // the script where you handle the form input.
 
+    $.ajax({
+           type: "POST",
+           url: url,
+           data: $("#profileForm").serialize(), // serializes the form's elements.
+           success: function(data)
+           {
+                 $('b.returnName').text(data);
+            //   alert(data); // show response from the php script.
+           }
+         });
+
+                // Uncomment the following line to submit the form using the defaultSubmit() method
+               // $('#profileForm').formValidation('defaultSubmit');
+             
                 // For testing purpose
                 $('#welcomeModal').modal();
+                
+                
+                // Clear the form
+                $("#profileForm")[0].reset();
+                
+                /**************************************************
+                 *  Send Jquery steps to 1 after submitting the form 
+                 * ***********************************************/
+                $.fn.steps.setStep = function (step)
+{
+  var currentIndex = $(this).steps('getCurrentIndex');
+  for(var i = 0; i < Math.abs(step - currentIndex); i++){
+    if(step > currentIndex) {
+      $(this).steps('next');
+    }
+    else{
+      $(this).steps('previous');
+    }
+  } 
+};
+// Call jquery setStep function inorder to set step 
+$("#profileForm").steps("setStep", 0); //based on 0 (set the index)
             }
         })
         .formValidation({
@@ -82,6 +117,7 @@ $(document).ready(function() {
             // This option will not ignore invisible fields which belong to inactive panels
             excluded: ':disabled',
             fields: {
+                /*
                 username: {
                      row: '.col-xs-6',
                     validators: {
@@ -339,7 +375,7 @@ $(document).ready(function() {
                         message: 'You must agree with the terms and conditions'
                     }
                 }
-            }
+            }*/
             }
         });
         
